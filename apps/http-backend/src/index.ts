@@ -186,12 +186,13 @@ app.get("/chats/:roomId", async (req, res) => {
 app.get("/room/:slug", async (req, res) => {
   try{
     const slug = req.params.slug;
-    console.log(slug)
     const roomId = await prismaClient.room.findFirst({
       where:{
         slug
       }
     })
+    console.log("ROOM details",roomId);
+
     if(!roomId){
       return res.status(404).json({
         message:"Error while getting room id",
@@ -199,7 +200,6 @@ app.get("/room/:slug", async (req, res) => {
       })
     }
 
-    console.log("roomId", roomId)
     return res.status(200).json({
       roomId:roomId,
       message:"room id",
