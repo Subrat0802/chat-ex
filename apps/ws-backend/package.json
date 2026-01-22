@@ -14,7 +14,8 @@
   "type": "commonjs",
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
-    "@repo/backend-common": "workspace: *"
+    "@repo/backend-common": "workspace: *",
+    "@repo/prisma":"workspace:*"
   },
   "dependencies": {
     "@types/jsonwebtoken": "^9.0.10",

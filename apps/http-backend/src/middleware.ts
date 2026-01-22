@@ -4,13 +4,13 @@ import { JWT_SECRET } from "@repo/backend-common/config";
 
 export const middleware = (req: Request, res: Response, next: NextFunction) => {
     try{
-        const token = req.header("authorization") ?? "";
+        const { token } = req.cookies;
 
         const decode = jwt.verify(token, JWT_SECRET);
 
         if(decode){
             //@ts-ignore
-            req.userId = decode.userId
+            req.userId = decode.id
         }
         next();
     }catch(error){
