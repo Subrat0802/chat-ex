@@ -6,6 +6,7 @@ export function useSocket() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        
         // Get token from localStorage or wherever you store it
         const token = localStorage.getItem("token") || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjZTEwZjFkLTk1YmYtNDdiMi1hNjQ3LWQwNWRiZmFiMDQ1MiIsImVtYWlsIjoic3VicmF0amlAZ21haWwuY29tIiwiaWF0IjoxNzY5MDMzNzM4LCJleHAiOjE3NjkxMjAxMzh9.mz2T99zfwIABbBQygUXwV1gzYODFNIwCUx0gr25PBUs";
         
